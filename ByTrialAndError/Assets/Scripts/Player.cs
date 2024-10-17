@@ -23,6 +23,8 @@ public class Player : MonoBehaviour
             _arrowStart = Input.mousePosition;
             _arrowStart.z = transform.position.z - Camera.main.transform.position.z + 0.01f;
             _arrowStart = Camera.main.ScreenToWorldPoint(_arrowStart);
+            _arrowStart.y = transform.position.y;
+            _arrowStart.x = transform.position.x;
         }
 
         if (Input.GetMouseButton(0))
@@ -30,6 +32,8 @@ public class Player : MonoBehaviour
             _arrowEnd = Input.mousePosition;
             _arrowEnd.z = transform.position.z - Camera.main.transform.position.z + 0.01f;
             _arrowEnd = Camera.main.ScreenToWorldPoint(_arrowEnd);
+            _arrowEnd.y = transform.position.y;
+            _arrowStart.x = transform.position.x;
 
             LR.positionCount = 2;
             LR.SetPosition(0, _arrowStart);
